@@ -11,9 +11,9 @@ The GNU Health server component comprises a database (Postgresql), a Tryton ente
 
 ### Step 1. Add a user _gnuhealth_
 The GNU Health requires a specialized user under whose account the system will run. By default this user has name gnuhealth. To add a user to the system you have to have sudo rights. 
-'''
+```
 $sudo adduser gnuhealth
-'''
+```
 ### Step 2. Database setup
 The GNU Health uses PostgreSQL database, [docummentation link](https://www.postgresql.org/docs/14/index.html).
 
