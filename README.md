@@ -23,4 +23,14 @@ To install postgress use a standard Ubuntu package manager [(here some general t
 ```
 $sudo apt install postgresql
 ```
+The postgresql database installs with the default role postgres and a default datbase `postgres` and a default password _postgres_. Therefore at first you can connect to the database and list all databases and then roles. The command to get help on commands is `\?`. 
+```
+$psql -U postgres -d postgres
+postgres# \l
+postgres#\du
+postgres#\q
+```
+In the postgresql database you will need to create a database gnuhealth and a role gnuhealth with the password, so that this user can be used to connect to the postgresql database in order to install Tryton software.    
+
+```
 
