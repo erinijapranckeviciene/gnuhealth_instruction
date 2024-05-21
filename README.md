@@ -14,9 +14,13 @@ The GNU Health requires a specialized user under whose account the system will r
 ```
 $sudo adduser gnuhealth
 ```
+This user will be connecting to the postgresql database and also running the gnuhealth service. You will need to suply password for this user.  
 
 ### Step 2. Database setup
 The GNU Health uses PostgreSQL database, [docummentation link](https://www.postgresql.org/docs/14/index.html).
 
-To install 
+To install postgress use a standard Ubuntu package manager [(here some general tips)](https://ubuntu.com/server/docs/install-and-configure-postgresql). 
+```
+$sudo apt install postgresql
+```
 
