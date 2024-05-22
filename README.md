@@ -74,7 +74,8 @@ wget -qO- https://codeberg.org/gnuhealth/his/releases/download/v4.4.0/gnuhealth-
 bash ./gnuhealth-setup install
 source ${HOME}/.gnuhealthrc
 ```
-
+This part installed all required modules and also Tryton software. Next step is to configure Tryton. 
+### Step 4. Configure Tryton.
 
 
 ```
