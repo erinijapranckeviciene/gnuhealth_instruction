@@ -173,34 +173,30 @@ Install gnuhealth client
 ```
 pip3 install --user --upgrade gnuhealth-client
 ```
-
-## Final step
-Start the gnuhealth service as a root from a different terminal 
-```
-sudo systemctl start gnuhealth
-```
-
-Connect to the server with gnuhealth-client
-
-#### To troubleshoot missing paclages
-As sudo install these packages
+###### To troubleshoot missing paclages
+As sudo install following packages:
 ```
 sudo apt install libgirepository1.0-dev
 sudo apt install python3-gi-cairo 
 sudo apt install python3-gi gobject-introspection gir1.2-gtk-3.0
 sudo apt install libcanberra-gtk-module libcanberra-gtk3-module
 ```
-Under a gnuhealth user install again
+Under a gnuhealth user install again:
 ```
 pip3 install PyGObject
 ```
+## Final step: start the server and connect
 
-**This is the end**
-Under the user gnuhealh start 
+Start the gnuhealth service as a root from a different terminal 
 ```
-$gnuhealth-client
+sudo systemctl start gnuhealth
 ```
-
+Under the gnuhealth user connect to the server with gnuhealth-client
+```
+gnuhealth@rtx4: gnuhealth-client
+```
+This is what we must see when we start `gnuhealth-client` as gnuhealth user:
+![image](https://github.com/erinijapranckeviciene/gnuhealth_instruction/assets/23616522/d4f38050-6da8-496a-a075-c0663af2bb36)
 
 
 
