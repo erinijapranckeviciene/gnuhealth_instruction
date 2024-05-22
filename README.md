@@ -45,11 +45,16 @@ postgres# \l
 postgres#\du
 postgres#\q
 ```
-Next you will have to create a database gnuhealth
+Next create a gnuhealth user with password, you will be prompted for sudo password and then for the database user gnuhealth. For training purposes enter password _gnuhealth_. Next you create the database and make the gnuhealth user owner of this database. Login to the database and do these tasks
 ```
-$createdb
-
-and a role gnuhealth with the password, so that this user can be used to connect to the postgresql database in order to install Tryton software.    
+$psql -U postgres -d postgres
+postgres# create user gnuhealth with createdb  nocreaterole nosuperuser password 'gnuhealth';
+postgres# create database health owner=gnuhealth;
+postgres# \l
+postgres# \du
+postgres# \q
+```
+This user and database will be used  in Tryton software installation.    
 
 ```
 ```
