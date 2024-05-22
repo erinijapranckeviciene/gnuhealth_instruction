@@ -177,7 +177,23 @@ Start the gnuhealth service as a root from a different terminal
 ```
 sudo systemctl start gnuhealth
 ```
-The gnuhealth-client is a graphical interface to the gnuhealth system. For it to run we need to install system wide and as user gnuhealth several additional packages.
+The gnuhealth-client is a graphical interface to the gnuhealth system. For it to run we need to configure graphical interface or try through web interface.  [Configuring DISPLAY](https://unix.stackexchange.com/questions/613458/how-to-enable-xhost-access-from-second-user-when-display0-is-on-first-user)
+
+On Virtual machines that will not work. We need gnuhealth to give permission to connect.
+
+[To fix "missing gi module](https://askubuntu.com/questions/80448/what-would-cause-the-gi-module-to-be-missing-from-python) install globally said packages.  
+
+###### Notes
+system wide and as user gnuhealth several additional packages. As sudo from the different terminal
+```
+sudo apt install python3-gi
+sudo apt install libgirepository1.0-dev
+```
+As gnuhealth user
+```
+
+
+
 
 
 
