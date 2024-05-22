@@ -199,7 +199,9 @@ In the connection window we must fill in host- localhost, database - health, use
 ![image](https://github.com/erinijapranckeviciene/gnuhealth_instruction/assets/23616522/1560afb8-e46c-4853-b005-0e229bee4a30)
 
 Enter the admin password 'admin' and you will see the main management window:
+![image](https://github.com/erinijapranckeviciene/gnuhealth_instruction/assets/23616522/ed67c4af-2f4e-44ce-a7a3-549805922133)
 
+This is an entry to configure the system.  For futher steps use official documentation [https://docs.gnuhealth.org/his/userguide/](https://docs.gnuhealth.org/his/userguide/) . 
 
 
 
