@@ -28,16 +28,11 @@ The postgresql database installs with the default role postgres and a default da
 # MAPNAME       SYSTEM-USERNAME         PG-USERNAME
 mapname1        your_login_name         postgres
 ```
-Second edit is in `/etc/postgresql/14/main/pg_hba.conf` file. There you must add the `map=mapname1` mapping to the peer authentication for postgres and change IPv4 and IPv6 authentication to peer two lines in a following way:
+Second edit is in `/etc/postgresql/14/main/pg_hba.conf` file. There you must add the `map=mapname1` mapping to the peer authentication for postgres in a following way:
 
 ```
 # Database administrative login by Unix domain socket
 local   all             postgres                                peer map=mapname1
-...
-# IPv4 local connections:
-host    all             all             127.0.0.1/32            peer         
-# IPv6 local connections:
-host    all             all             ::1/128                 peer  
 ```
 After these modifications you have to restart postgres server
 ```
