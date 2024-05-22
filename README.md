@@ -177,20 +177,26 @@ Start the gnuhealth service as a root from a different terminal
 ```
 sudo systemctl start gnuhealth
 ```
-The gnuhealth-client is a graphical interface to the gnuhealth system. For it to run we need to configure graphical interface or try through web interface.  [Configuring DISPLAY](https://unix.stackexchange.com/questions/613458/how-to-enable-xhost-access-from-second-user-when-display0-is-on-first-user)
 
-On Virtual machines that will not work. We need gnuhealth to give permission to connect.
+Connect to the server with gnuhealth-client
 
-[To fix "missing gi module](https://askubuntu.com/questions/80448/what-would-cause-the-gi-module-to-be-missing-from-python) install globally said packages.  
+#### Troubleshooting
+The gnuhealth-client is a graphical interface to the gnuhealth system. For it to run we need to configure graphical interface _or try through web interface_.  [Configuring DISPLAY](https://unix.stackexchange.com/questions/613458/how-to-enable-xhost-access-from-second-user-when-display0-is-on-first-user)
 
-###### Notes
-system wide and as user gnuhealth several additional packages. As sudo from the different terminal
+On Virtual machines this trick will not work. We need gnuhealth to connect via ssh.
+System wide and as user gnuhealth several additional packages. As sudo from the different terminal
 ```
-sudo apt install python3-gi
 sudo apt install libgirepository1.0-dev
+sudo apt install python3-gi-cairo 
 ```
-As gnuhealth user
+As gnu health user
 ```
+pip3 install PyGObject
+```
+
+###### Other notes
+[To fix "missing gi module](https://askubuntu.com/questions/80448/what-would-cause-the-gi-module-to-be-missing-from-python) and
+[another fix](https://stackoverflow.com/questions/76590220/importerror-gtk-based-backends-require-cairo-no-module-named-gi-gi-cairo)
 
 
 
