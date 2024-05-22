@@ -83,6 +83,7 @@ You will open it with the command that is simple vim editor.
 editconf
 ```
 You will see the following:
+```
 [database]
 uri = postgresql://localhost:5432
 path = /home/gnuhealth/attach
@@ -172,6 +173,7 @@ Install gnuhealth client
 ```
 pip3 install --user --upgrade gnuhealth-client
 ```
+
 ## Final step
 Start the gnuhealth service as a root from a different terminal 
 ```
@@ -180,26 +182,40 @@ sudo systemctl start gnuhealth
 
 Connect to the server with gnuhealth-client
 
-#### Troubleshooting
-The gnuhealth-client is a graphical interface to the gnuhealth system. For it to run we need to configure graphical interface _or try through web interface_.  [Configuring DISPLAY](https://unix.stackexchange.com/questions/613458/how-to-enable-xhost-access-from-second-user-when-display0-is-on-first-user)
-
-On Virtual machines this trick will not work. We need gnuhealth to connect via ssh.
-System wide and as user gnuhealth several additional packages. As sudo from the different terminal
+#### To troubleshoot missing paclages
+As sudo install these packages
 ```
 sudo apt install libgirepository1.0-dev
 sudo apt install python3-gi-cairo 
+sudo apt install python3-gi gobject-introspection gir1.2-gtk-3.0
+sudo apt install libcanberra-gtk-module libcanberra-gtk3-module
 ```
-As gnu health user
+Under a gnuhealth user install again
 ```
 pip3 install PyGObject
 ```
+
+**This is the end**
+Under the user gnuhealh start 
+```
+$gnuhealth-client
+```
+
+
+
+
+#### Other note about DISPLAY setuo
+The gnuhealth-client is a graphical interface to the gnuhealth system. For it to run we need to configure graphical interface _or try through web interface_.  [Configuring DISPLAY](https://unix.stackexchange.com/questions/613458/how-to-enable-xhost-access-from-second-user-when-display0-is-on-first-user)
+
+On Virtual machines this trick will not work. We need gnuhealth to connect via ssh -X :
+```
+$ssh -X gnuhealth@xxx.xxx.xxx.xxx
+```
+Or we need to configure web interface access. 
+
+
 This is what we must see when we start `gnuhealth-client` as gnuhealth user
 ![image](https://github.com/erinijapranckeviciene/gnuhealth_instruction/assets/23616522/d4f38050-6da8-496a-a075-c0663af2bb36)
-
-
-###### Other notes
-[To fix "missing gi module](https://askubuntu.com/questions/80448/what-would-cause-the-gi-module-to-be-missing-from-python) and
-[another fix](https://stackoverflow.com/questions/76590220/importerror-gtk-based-backends-require-cairo-no-module-named-gi-gi-cairo)
 
 
 
