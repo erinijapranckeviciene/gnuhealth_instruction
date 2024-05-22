@@ -76,7 +76,35 @@ source ${HOME}/.gnuhealthrc
 ```
 This part installed all required modules and also Tryton software. Next step is to configure Tryton. 
 ### Step 4. Configure Tryton.
+Tryton config file is `
 
-
+You will open it with the command 
 ```
+editconf
+```
+You will see the following:
+[database]
+uri = postgresql://localhost:5432
+path = /home/gnuhealth/attach
+
+[web]
+listen = *:8000
+
+[webdav]
+listen = *:8080
+ssl_webdav = False
+```
+Here important thing to note is that you have to provide a user and password in the [database] section to be able to connect to the postgres database to do the initial Tryton database configuration. Remember that we created a user gnuhealth with the passworg _gnuhealth_.  Edit as follows and save.  
+```
+[database]
+uri = postgresql://gnuhealth:gnuhealth@localhost:5432
+path = /home/gnuhealth/attach
+
+[web]
+listen = *:8000
+
+[webdav]
+listen = *:8080
+ssl_webdav = False
+
 ```
