@@ -23,9 +23,10 @@ To install postgress use a standard Ubuntu package manager [(here some general t
 ```
 $sudo apt install postgresql
 ```
-The postgresql database installs with the default role postgres and a default datbase `postgres` and a default password _postgres_. However, most likely you will see peer authentication failed for postgress. If the peer authentication is set as default you have to map a current logged to the system user to the postgres database user. The mapping file on the system is `/etc/postgresql/14/main/pg_ident.conf`. Open it with `sudo nano` and edit adding a line:
+The postgresql database installs with the default role postgres and a default datbase `postgres` and a default password _postgres_. However, most likely you will see peer authentication failed for postgress. If the peer authentication is set as default you have to map a current logged to the system user to the postgres database user. The mapping file on the system is `/etc/postgresql/14/main/pg_ident.conf`. Open it with `sudo nano` and edit adding a line at the end:
 ```
-
+# MAPNAME       SYSTEM-USERNAME         PG-USERNAME
+mapname1        your_login_name         postgres
 ```
 
 
