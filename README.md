@@ -28,7 +28,18 @@ The postgresql database installs with the default role postgres and a default da
 # MAPNAME       SYSTEM-USERNAME         PG-USERNAME
 mapname1        your_login_name         postgres
 ```
-After this modification you have to restart postgres server
+Second edit is in `/etc/postgresql/14/main/pg_hba.conf` file. There you must add the `map=mapname1` mapping to the peer authentication for postgres and change IPv4 and IPv6 authentication to peer two lines in a following way:
+
+```
+# Database administrative login by Unix domain socket
+local   all             postgres                                peer map=mapname1
+...
+# IPv4 local connections:
+host    all             all             127.0.0.1/32            peer         
+# IPv6 local connections:
+host    all             all             ::1/128                 peer  
+```
+After these modifications you have to restart postgres server
 ```
 sudo systemctl restart postgresql
 ```
@@ -39,7 +50,11 @@ postgres# \l
 postgres#\du
 postgres#\q
 ```
-In the postgresql database you will need to create a database gnuhealth and a role gnuhealth with the password, so that this user can be used to connect to the postgresql database in order to install Tryton software.    
+Next you will have to create a database gnuhealth
+```
+$createdb
+
+and a role gnuhealth with the password, so that this user can be used to connect to the postgresql database in order to install Tryton software.    
 
 ```
 ```
