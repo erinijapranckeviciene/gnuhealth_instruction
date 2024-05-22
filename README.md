@@ -107,5 +107,8 @@ listen = *:8000
 listen = *:8080
 ssl_webdav = False
 ```
-
+You can set up logging as is shown in **Vanilla instalation**. We skip it here.
+### Step 5. Initialization of Tryton database.
+Here the tryton initializer creates empty instance of the database with all hospital information system templates.
+   
 
