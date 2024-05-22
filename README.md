@@ -28,9 +28,11 @@ The postgresql database installs with the default role postgres and a default da
 # MAPNAME       SYSTEM-USERNAME         PG-USERNAME
 mapname1        your_login_name         postgres
 ```
-
-
-Therefore at first you can connect to the database and list all databases and then roles. The command to get help on commands is `\?`. 
+After this modification you have to restart postgres server
+```
+sudo systemctl restart postgresql
+```
+Now you can connect to the database and list all databases and then roles. The command to get help on commands is `\?`. 
 ```
 $psql -U postgres -d postgres
 postgres# \l
@@ -40,4 +42,4 @@ postgres#\q
 In the postgresql database you will need to create a database gnuhealth and a role gnuhealth with the password, so that this user can be used to connect to the postgresql database in order to install Tryton software.    
 
 ```
-
+```
