@@ -45,7 +45,7 @@ postgres# \l
 postgres#\du
 postgres#\q
 ```
-Next create a gnuhealth user with password, you will be prompted for sudo password and then for the database user gnuhealth. For training purposes enter password _gnuhealth_. Next you create the database and make the gnuhealth user owner of this database. Login to the database and do these tasks
+Next create a gnuhealth user with password, you will be prompted for sudo password and then for the database user gnuhealth. For training purposes enter password _gnuhealth_. Create the database and make the gnuhealth user owner of this database as follows. List the users and databases. 
 ```
 $psql -U postgres -d postgres
 postgres# create user gnuhealth with createdb  nocreaterole nosuperuser password 'gnuhealth';
@@ -54,7 +54,28 @@ postgres# \l
 postgres# \du
 postgres# \q
 ```
-This user and database will be used  in Tryton software installation.    
+This user and database will be used later in Tryton software installation.    
+
+### Step 3. Install GNU health
+
+This part is as explained in [Vanilla installation](https://docs.gnuhealth.org/his/techguide/installation/vanilla.html#initialize-the-database-instance) **Downloading and installing GNU Health**. 
+Swithch to gnuhealth user. The following commands are without modification as is in Vanilla installation document. 
+```
+$su - gnuhealth
+$cd $HOME
+wget https://codeberg.org/gnuhealth/his/releases/download/v4.4.0/gnuhealth-4.4.0.tar.gz
+gpg --recv-key  --keyserver  keyserver.ubuntu.com 0xC015E1AE00989199
+gpg --with-fingerprint --list-keys 0xC015E1AE00989199
+wget https://codeberg.org/gnuhealth/his/releases/download/v4.4.0/gnuhealth-4.4.0.tar.gz.sig
+gpg --verify gnuhealth-4.4.0.tar.gz.sig gnuhealth-4.4.0.tar.gz
+tar xzf gnuhealth-4.4.0.tar.gz
+cd gnuhealth-4.4.0
+wget -qO- https://codeberg.org/gnuhealth/his/releases/download/v4.4.0/gnuhealth-setup-4.4.0.tar.gz | tar -xzvf -
+bash ./gnuhealth-setup install
+source ${HOME}/.gnuhealthrc
+```
+
+
 
 ```
 ```
