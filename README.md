@@ -76,9 +76,9 @@ source ${HOME}/.gnuhealthrc
 ```
 This part installed all required modules and also Tryton software. Next step is to configure Tryton. 
 ### Step 4. Configure Tryton.
-Tryton config file is `
+Tryton config file is `/home/gnuhealth/gnuhealth/tryton/server/config/trytond.conf`.
 
-You will open it with the command 
+You will open it with the command that is simple vim editor.  
 ```
 editconf
 ```
@@ -106,5 +106,6 @@ listen = *:8000
 [webdav]
 listen = *:8080
 ssl_webdav = False
-
 ```
+
+
