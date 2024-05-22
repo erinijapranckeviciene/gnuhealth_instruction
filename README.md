@@ -152,6 +152,38 @@ Enabling at boot time
 ```
 systemctl enable gnuhealth
 ```
+Will start the gnuhealth service later. At this time we leave ngix web server and uwsgi configuration aside and proceed to gnuhealth client installation.
+
+## The GNU Health client component
+Under the same gnuhealth user install gnuhealth client
+Add PATH variable to .bashrc file
+```
+nano $HOME/.bashrc
+#add this line
+export PATH=$HOME/.local/bin:$PATH
+#close the file
+source $HOME/.bashrc
+```
+Update pip3
+```
+pip3 install --upgrade --user pip
+```
+Install gnuhealth client
+```
+pip3 install --user --upgrade gnuhealth-client
+```
+## Final step
+Start the gnuhealth service as a root from a different terminal 
+```
+sudo systemctl start gnuhealth
+```
+The gnuhealth-client is a graphical interface to the gnuhealth system. For it to run we need to install system wide and as user gnuhealth several additional packages.
+
+
+
+
+
+
 
 
    
