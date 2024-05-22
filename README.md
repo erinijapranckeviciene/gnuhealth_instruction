@@ -109,6 +109,20 @@ ssl_webdav = False
 ```
 You can set up logging as is shown in **Vanilla instalation**. We skip it here.
 ### Step 5. Initialization of Tryton database.
-Here the tryton initializer creates empty instance of the database with all hospital information system templates.
+Here the tryton initializer creates empty instance of the database with all hospital information system templates. Change to newly installed system:
+```
+cdexe
+```
+Run initialization script:
+```
+python3 ./trytond-admin --all --database=health -vv
+```
+During this process you will be asked for admin email and admin password. Give pasword _admin_ so that it is easy to remember.
+ 
+### Step 5. Create a gnuhealth service
+Linux systems have very nice feature that is you can create a service that runs in the background as for example sshd or postgres or nginx services. For this you have to put a service definition files in a certain location on the file system.
+
+
+
    
 
