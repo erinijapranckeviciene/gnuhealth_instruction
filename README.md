@@ -195,8 +195,11 @@ Under the gnuhealth user connect to the server with gnuhealth-client
 ```
 gnuhealth@rtx4: gnuhealth-client
 ```
-This is what we must see when we start `gnuhealth-client` as gnuhealth user:
-![image](https://github.com/erinijapranckeviciene/gnuhealth_instruction/assets/23616522/d4f38050-6da8-496a-a075-c0663af2bb36)
+In the connection window we must fill in host- localhost, database - health, user - admin :
+![image](https://github.com/erinijapranckeviciene/gnuhealth_instruction/assets/23616522/1560afb8-e46c-4853-b005-0e229bee4a30)
+
+Enter the admin password 'admin' and you will see the main management window:
+
 
 
 
@@ -208,11 +211,6 @@ On Virtual machines this trick will not work. We need gnuhealth to connect via s
 $ssh -X gnuhealth@xxx.xxx.xxx.xxx
 ```
 Or we need to configure web interface access. 
-
-
-This is what we must see when we start `gnuhealth-client` as gnuhealth user
-![image](https://github.com/erinijapranckeviciene/gnuhealth_instruction/assets/23616522/d4f38050-6da8-496a-a075-c0663af2bb36)
-
 
 
 
