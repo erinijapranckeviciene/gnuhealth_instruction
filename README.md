@@ -193,6 +193,9 @@ As gnu health user
 ```
 pip3 install PyGObject
 ```
+This is what we must see when we start `gnuhealth-client` as gnuhealth user
+![image](https://github.com/erinijapranckeviciene/gnuhealth_instruction/assets/23616522/d4f38050-6da8-496a-a075-c0663af2bb36)
+
 
 ###### Other notes
 [To fix "missing gi module](https://askubuntu.com/questions/80448/what-would-cause-the-gi-module-to-be-missing-from-python) and
