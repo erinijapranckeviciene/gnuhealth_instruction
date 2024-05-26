@@ -214,10 +214,10 @@ $ssh -X gnuhealth@xxx.xxx.xxx.xxx
 ```
 Or we need to configure web interface access. 
 
-## Setup intructions for web client on localhost first
+## The GNU Health web client setup intructions on localhost
 GNU Health system can be accessed by the tryton web client. Unfortunately the docummentation on how to install trytond sao webclient in various places is not complete. Here is a summary of steps that allow to start sao webclient. At first it is installed on localhost:8000. 
 
-## Step 1. Installing Node.js and node package manager npm under the local user
+### Step 1. Installing Node.js and node package manager npm under the local user
 
 Change to the gnuhealth user
 ```
@@ -238,7 +238,7 @@ $npm install grunt
 ```
 In addition note,  if a specific version of Node.js is needed, then you can install it as for example: `nvm install v14.16.1`. 
 
-## Step 2. Obtain tryton web client SAO and install it.
+### Step 2. Obtain tryton web client SAO and install it.
 Continue as user gnihealth
 ```
 $cd $HOME
@@ -276,7 +276,17 @@ listen = *:8000
 listen = *:8080
 ssl_webdav = False
 ```
-### Step 3. Invoke the webclient
+### Step 4. Invoke the webclient
+Open your webbroser and enter http://localhost:8000 . You must receive the authentication window where you enter the database user admin with password _admin_ . This is the user that you created upon database initialization.
+![image](https://github.com/erinijapranckeviciene/gnuhealth_instruction/assets/23616522/4db8cdd4-355f-46e8-b0ad-72daea407d0b)
+
+After you log in you will see a database management window like this:
+
+![image](https://github.com/erinijapranckeviciene/gnuhealth_instruction/assets/23616522/0d234784-79c3-4064-a7c2-dca71c9fe3f4)
+
+
+From this point forward - the module instalation and configuration must be well described in GNU Health docummentation. 
+
 
 
 
