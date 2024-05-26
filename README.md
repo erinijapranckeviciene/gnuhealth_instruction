@@ -214,6 +214,35 @@ $ssh -X gnuhealth@xxx.xxx.xxx.xxx
 ```
 Or we need to configure web interface access. 
 
+## Setup intructions for web client on localhost first
+GNU Health system can be accessed by the tryton web client. Unfortunately the docummentation on how to install trytond sao webclient in various places is not complete. Here is a summary of steps that allow to start sao webclient. At first it is installed on localhost:8000. 
+
+## Step 1. Installing Node.js and node package manager npm under the local user
+
+Change to the gnuhealth user
+```
+$su - gnuhealth
+```
+Install Node.js and npm using node version manager nvm. The dependencies are written to .bashrc. Everytime you need to work with npm you must source the .bashrc .
+```
+$ curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.1/install.sh | bash
+$ nvm install node
+$source $HOME/.bashrc
+$node --version
+$npm --version
+```
+Install other packages that may be needed , under the local user 
+```
+$npm install -g grunt-cli
+$npm install grunt
+```
+In addition note,  if a specific version of Node.js is needed, then you can install it as for example: `nvm install v14.16.1`. 
+
+## Step 2. Obtain tryton web client SAO and install it.
+Continue as user gnihealth
+```
+$cd $HOME
+
 
 
 
