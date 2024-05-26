@@ -242,6 +242,47 @@ In addition note,  if a specific version of Node.js is needed, then you can inst
 Continue as user gnihealth
 ```
 $cd $HOME
+$mkdir sao
+
+# Get the sao software from tryton official site. Our version is 6.0. Get the latest package.
+$wget https://downloads.tryton.org/6.0/tryton-sao-last.tgz
+
+#extract. It extracts the package dir, enter the package dir
+$tar -xvf tryton-sao-last.tgz
+$cd package
+
+#install sao using npm
+$npm install --production --legacy-peer-deps
+```
+### Step 3. Add necessary information into tryton config file
+```
+$nano $HOME/gnuhealth/tryton/server/config/trytond.conf
+```
+The [web] and [jasonrpc] must contain the path to the sao folder:
+```
+[database]
+uri = postgresql://trydbuser:trydbuser@localhost:5432
+path = /home/gnuhealth/attach
+
+[web]
+listen = localhost:8000
+root = /home/gnuhealth/sao/package
+
+[jsonrpc]
+data= /home/gnuhealth/sao/package
+listen = *:8000
+
+[webdav]
+listen = *:8080
+ssl_webdav = False
+```
+### Step 3. Invoke the webclient
+
+
+
+
+
+
 
 
 
