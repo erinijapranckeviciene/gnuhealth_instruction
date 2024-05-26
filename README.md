@@ -226,30 +226,27 @@ $su - gnuhealth
 Install Node.js and npm using node version manager nvm. The dependencies are written to .bashrc. Everytime you need to work with npm you must source the .bashrc .
 ```
 $ curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.1/install.sh | bash
+# source .bashrc where nvm environment params are written 
+$ source $HOME/.bashrc
 $ nvm install node
-$source $HOME/.bashrc
-$node --version
-$npm --version
+
+$ node --version
+$ npm --version
 ```
-Install other packages that may be needed , under the local user 
-```
-$npm install -g grunt-cli
-$npm install grunt
-```
-In addition note,  if a specific version of Node.js is needed, then you can install it as for example: `nvm install v14.16.1`. 
 
 ### Step 2. Obtain tryton web client SAO and install it.
-Continue as user gnihealth
+Continue as user gnihealth. For this to complete, **git** must be installed on the system. 
 ```
-$cd $HOME
-$mkdir sao
+$ cd $HOME
+$ mkdir sao
+$ cd sao
 
 # Get the sao software from tryton official site. Our version is 6.0. Get the latest package.
-$wget https://downloads.tryton.org/6.0/tryton-sao-last.tgz
+$ wget https://downloads.tryton.org/6.0/tryton-sao-last.tgz
 
 #extract. It extracts the package dir, enter the package dir
-$tar -xvf tryton-sao-last.tgz
-$cd package
+$ tar -xvf tryton-sao-last.tgz
+$ cd package
 
 #install sao using npm
 $npm install --production --legacy-peer-deps
